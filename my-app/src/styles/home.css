@@ -95,11 +95,15 @@ body {
 }
 
 .hub {
-    font-size: 2rem;
-    background-color: white;
-    padding: 0.5rem 1rem;
-    margin-top: 0.5rem;
-    border-radius: 8px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    background-color: #dad9d5;
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .subtitle {
@@ -167,7 +171,7 @@ body {
 }
 
 .color-4 {
-    background-color: #FFFEF8;
+    background-color: #bab7a6;
 }
 
 /* Section Styling */
@@ -204,50 +208,533 @@ p {
     font-size: 1.2rem;
 }
 
+/* Reminders Section */
+.reminders-section {
+    background-color: #80B2FF;
+    padding: 10rem 10rem;
+    text-align: center;
+}
+
+.reminder-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    line-height: 1.8
+}
+
+.px {
+    line-height: 1.8
+}
+
+.reminder-box {
+    height: 300px;
+    width: 30%;
+    padding: 4rem;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Assign Background Colors to the Squares */
+.reminder-box.color-1 {
+    background-color: #766fd1;
+}
+
+.reminder-box.color-2 {
+    background-color: #32a8b1;
+}
+
+/* Policies Section */
+.policies-section {
+    background-color: #FFD75F;
+    padding: 4rem 1rem;
+}
+
+/* Student Section */
+.student-section {
+    background-color: #66C790;
+    padding: 4rem 1rem;
+}
+
+/* Teacher Section */
+.teacher-section {
+    background-color: #600a75;
+    padding: 4rem 1rem;
+}
+
+/* Resources Section */
+.resources-section {
+    background-color: #80B2FF;
+    padding: 4rem 1rem;
+}
+
+/* Teacher Meet Section */
+.teacherMeet-section {
+    background-color: #FFD75F;
+    padding: 4rem 1rem;
+}
+
+/* Support Section */
+.support-section {
+    background-color: #80B2FF;
+    padding: 4rem 1rem;
+}
+
+/* Events Section */
+.events-section {
+    background-color: #FFFEF8;
+    padding: 4rem 1rem;
+}
+
 /* Footer */
 .footer {
     text-align: center;
     padding: 2rem;
     background-color: #333;
     color: white;
-}
-
-.reminders-section {
-    background-color: #80B2FF;
 }
 
 .policies-section {
     background-color: #FFD75F;
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
+/* Title and Description */
+.policies-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.policies-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Rules List */
+.rules-list {
+    width: 100%;
+    /* Ensure the list takes full width */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    /* Center the items horizontally */
+}
+
+/* Individual Rule Box Styling */
+.rule-box {
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    width: 700px;
+    /* Width of the rectangle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    /* Center the boxes horizontally */
+}
+
+/* Colors for the Boxes */
+.rule-box:nth-child(1) {
+    background-color: #FF7152;
+    /* Red */
+}
+
+.rule-box:nth-child(2) {
+    background-color: #ad7c88;
+    /* Yellow */
+}
+
+.rule-box:nth-child(3) {
+    background-color: #53BC80;
+    /* Green */
+}
+
+.rule-box:nth-child(4) {
+    background-color: #80B2FF;
+    /* Blue */
+}
+
+.rule-box:nth-child(5) {
+    background-color: #B597FF;
+    /* Purple */
+}
+
+/* Student Section */
 .student-section {
     background-color: #66C790;
-}
-
-.teacher-section {
-    background-color: #FFFEF8;
-}
-
-.resources-section {
-    background-color: #80B2FF;
-}
-
-.teacherMeet-section {
-    background-color: #FFD75F;
-}
-
-.support-section {
-    background-color: #66C790;
-}
-
-.events-section {
-    background-color: #FFFEF8;
-}
-
-/* Footer */
-.footer {
+    /* Green background */
+    padding: 4rem 1rem;
     text-align: center;
-    padding: 2rem;
-    background-color: #333;
+}
+
+/* Title */
+.student-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
     color: white;
+}
+
+/* Description */
+.student-section p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: rgb(81, 22, 129);
+    line-height: 1.5;
+}
+
+/* Student Info Box */
+.student-info-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(187, 211, 100);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Student Avatar Section */
+.student-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    /* Adjust the space between image and text */
+}
+
+/* Avatar Styling */
+.avatar {
+    background-color: #FFD75F;
+    /* Yellow background for avatar */
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* Round shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.initials {
+    text-transform: uppercase;
+}
+
+/* Student Image */
+.student-info-box img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Student Details */
+.student-details {
+    text-align: left;
+    color: #333;
+}
+
+/* Student Name */
+.student-details h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Student Info Paragraphs */
+.student-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Teacher Section */
+.teacher-section {
+    background-color: #bab7a6;
+    /* Light background */
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+/* Title */
+.teacher-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Description */
+.teacher-section p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Teacher Info Box */
+.teacher-info-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(190, 160, 157);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Teacher Avatar Section */
+.teacher-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    /* Space between image and text */
+}
+
+/* Avatar Styling */
+.avatar {
+    background-color: #FFD75F;
+    /* Yellow background for avatar */
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* Round shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.initials {
+    text-transform: uppercase;
+}
+
+/* Teacher Image */
+.teacher-info-box img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Teacher Details */
+.teacher-details {
+    text-align: left;
+    color: #333;
+}
+
+/* Teacher Name */
+.teacher-details h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Teacher Info Paragraphs */
+.teacher-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+
+
+
+
+/* Support Section */
+.support-section {
+    background-color: #80B2FF;
+    /* Green background */
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+/* Title */
+.support-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: rgb(15, 32, 15);
+}
+
+/* Description */
+.support-section p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: rgb(15, 32, 15);
+    line-height: 1.5;
+}
+
+/* Contact Box */
+.contact-box {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Input Fields */
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #a71717;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Submit Button */
+.contact-form button {
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: #FFD75F;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    background-color: #E5C24E;
+}
+
+/* Contact Details */
+.contact-details {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    color: rgb(24, 4, 4);
+}
+
+/* Suggestions Section */
+.suggestions-section {
+    background-color: #bab7a6;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.suggestions-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.suggestions-section p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.suggestions-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Short and Centered Textbox */
+.suggestion-textbox {
+    width: 60%;
+    /* Shorter width */
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    text-align: center;
+    /* Center text */
+    font-size: 1rem;
+}
+
+/* Button Styling */
+.suggestion-button {
+    background-color: #FFD75F;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.suggestion-button:hover {
+    background-color: #e3c03d;
+}
+
+
+/* Events Section */
+.events-section {
+    background-color: #a1cedb;
+    /* Light pastel background */
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.events-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.events-section p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.event-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.balloons-img {
+    width: 300px;
+    /* Adjust size as needed */
+    height: auto;
+}
+
+.events-section .balloons-img {
+    width: 70%;
+    max-width: 500px;
+    /* Ensure it's not too large */
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
 }

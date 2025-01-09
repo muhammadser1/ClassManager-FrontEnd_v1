@@ -30,8 +30,9 @@ const Home = () => {
                             <span className="hub curved-down">ZONE</span>
                         </div>
                     </div>
-                    <p className="subtitle">Al Maram</p>
-                </div>
+                    <div className="classroom-container">
+                        <span className="classroom curved-text">Al Maram</span>
+                    </div>                </div>
 
                 {/* Right Section with Anchor Links */}
                 <div className="right-section">
@@ -51,40 +52,26 @@ const Home = () => {
                             <span>Classroom Policies</span>
                         </div>
                     </a>
-                    <a href="#student">
-                        <div className="grid-item color-3">
-                            <div className="icon">
-                                <img src="src/images/student-of-the-week.png" alt="Student of the Week Icon" />
-                            </div>
-                            <span>Student of the Week</span>
-                        </div>
-                    </a>
-                    <a href="#teacher">
+
+                    <a href="#suggestions">
                         <div className="grid-item color-4">
                             <div className="icon">
-                                <img src="src/images/teacher-of-the-week-icon.png" alt="Teacher of the Week Icon" />
+                                <img src="src/images/idea.png" alt="suggestions" />
                             </div>
-                            <span>Teacher of the Week</span>
+                            <span>Suggestions</span>
                         </div>
                     </a>
                     <a href="#resources">
-                        <div className="grid-item color-1">
+                        <div className="grid-item color-4">
                             <div className="icon">
                                 <img src="src/images/class-resources-icon.png" alt="Class Resources Icon" />
                             </div>
                             <span>Class Resources</span>
                         </div>
                     </a>
-                    <a href="#teacherMeet">
-                        <div className="grid-item color-2">
-                            <div className="icon">
-                                <img src="src/images/meet-the-teacher-icon.png" alt="Meet the Teacher Icon" />
-                            </div>
-                            <span>Meet the Teacher</span>
-                        </div>
-                    </a>
+
                     <a href="#support">
-                        <div className="grid-item color-3">
+                        <div className="grid-item color-1">
                             <div className="icon">
                                 <img src="src/images/support-icon.png" alt="Support Icon" />
                             </div>
@@ -92,7 +79,7 @@ const Home = () => {
                         </div>
                     </a>
                     <a href="#events">
-                        <div className="grid-item color-4">
+                        <div className="grid-item color-2">
                             <div className="icon">
                                 <img src="src/images/events-icon.png" alt="Events Icon" />
                             </div>
@@ -100,48 +87,137 @@ const Home = () => {
                         </div>
                     </a>
                 </div>
+
             </div>
 
             {/* Sections with Unique Classes */}
-            <section id="reminders" className="reminders-section" >
+            <section id="reminders" className="reminders-section">
                 <h2>Reminders</h2>
-                <p>Here you can view all important reminders for your class.</p>
+                {/* Two Square Boxes in the Reminders Section */}
+                <div className="reminder-boxes">
+                    <div className="reminder-box color-1">
+                        <h3>Reminder 1</h3>
+                        <px>Don't forget to submit the lesson. Ensure all work is done and ready for review by the end of the day!</px>
+                    </div>
+                    <div className="reminder-box color-2">
+                        <h3>Reminder 2</h3>
+                        <px>If there are any notes or changes, please inform Maram or the parent as soon as possible. Communication is key!</px>
+                    </div>
+                </div>
             </section>
 
             <section id="policies" className="policies-section">
                 <h2>Classroom Policies</h2>
-                <p>Check out the rules and policies for a successful learning experience.</p>
+
+                <div className="rules-list">
+                    <div className="rule-box">
+                        Rule 1: Be respectful to others and their opinions.
+                    </div>
+                    <div className="rule-box">
+                        Rule 2: Keep your workspace clean and organized.
+                    </div>
+                    <div className="rule-box">
+                        Rule 3: Always ask questions when you're unsure.
+                    </div>
+                    <div className="rule-box">
+                        Rule 4: Be on time for class and stay engaged.
+                    </div>
+                    <div className="rule-box">
+                        Rule 5: Keep your devices on silent or vibrate during class.
+                    </div>
+                </div>
             </section>
 
-            <section id="student" className="student-section">
-                <h2>Student of the Week</h2>
-                <p>Celebrate the outstanding student of the week.</p>
-            </section>
 
-            <section id="teacher" className="teacher-section">
-                <h2>Teacher of the Week</h2>
-                <p>Recognize the teacher of the week for their amazing contributions.</p>
-            </section>
 
             <section id="resources" className="resources-section">
                 <h2>Class Resources</h2>
                 <p>Access all the necessary resources for your class.</p>
             </section>
 
-            <section id="teacherMeet" className="teacherMeet-section">
-                <h2>Meet the Teacher</h2>
-                <p>Get to know your teacher and their teaching approach.</p>
-            </section>
 
             <section id="support" className="support-section">
-                <h2>Support</h2>
-                <p>Need help? Find the resources to assist you.</p>
+                <h2>Need Support?</h2>
+                <p>If you are facing technical issues or have questions, feel free to reach out to me!</p>
+
+                <div className="contact-box">
+                    <form className="contact-form">
+                        <input
+                            type="text"
+                            placeholder="Your Name"
+                            required
+                            name="name"
+                        />
+                        <input
+                            type="email"
+                            placeholder="Your Email"
+                            required
+                            name="email"
+                        />
+                        <textarea
+                            placeholder="Describe your issue..."
+                            rows="4"
+                            required
+                            name="message"
+                        ></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+
+                    <div className="contact-details">
+                        <p>For immediate assistance, you can contact me directly:</p>
+                        <p><strong>Phone:</strong> 0538250579</p>
+                        <p><strong>Name:</strong> Mohammad Sarahni</p>
+                    </div>
+                </div>
+            </section>
+            <section id="suggestions" className="suggestions-section">
+                <h2>We Value Your Suggestions</h2>
+                <p>Share your ideas to help us improve and make your experience better.</p>
+
+                <form>
+                    <textarea
+                        placeholder="What suggestions do you have for us?"
+                        rows="5"
+                        style={{
+                            width: "50%", // Adjust the width
+                            padding: "1rem",
+                            borderRadius: "12px", // More rounded corners
+                            borderColor: "#ccc",
+                            marginBottom: "1rem",
+                            fontSize: "1rem", // Optional: to make the text inside look more consistent
+                        }}
+                    />
+                    <br />
+                    <button
+                        type="submit"
+                        style={{
+                            backgroundColor: "#C7BBE2",
+                            color: "#fff",
+                            padding: "1rem 2rem",
+                            borderRadius: "8px",
+                            marginTop: "1rem"
+                        }}
+                    >
+                        Submit Suggestion
+                    </button>
+                </form>
             </section>
 
             <section id="events" className="events-section">
-                <h2>Upcoming Events</h2>
-                <p>Stay tuned for exciting upcoming events and activities!</p>
+                <h2>Happy Birthday to Teacher 1</h2>
+                <p>We wish you all the best on your special day! 🎉🎂</p>
+
+                <div className="event-image">
+                    <img
+                        src="src/images/events-icon.png"
+                        alt="Happy Birthday Balloons"
+                        className="balloons-img"
+                    />
+                </div>
+
+                <p>May this year bring you happiness, success, and many more celebrations!</p>
             </section>
+
 
             {/* Footer */}
             <footer className="footer">
