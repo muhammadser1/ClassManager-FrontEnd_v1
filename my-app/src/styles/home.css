@@ -1,0 +1,253 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #66C790;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #808080;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.institute-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-right {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.auth-button {
+    background-color: white;
+    color: #808080;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.auth-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Left-Right Section */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    height: 80vh;
+    margin-top: 4rem;
+}
+
+/* Left Section */
+.left-section {
+    flex: 1;
+    text-align: center;
+}
+
+.classroom-container {
+    display: inline-block;
+}
+
+.classroom {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    background-color: #FFD700;
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hub {
+    font-size: 2rem;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+}
+
+.subtitle {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Right Section - Grid */
+.right-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    justify-content: start;
+    align-items: start;
+    padding-left: 2rem;
+}
+
+/* Grid Item Styling */
+.grid-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Styling */
+.icon {
+    width: 70px;
+    height: 70px;
+    margin-right: 1rem;
+    background-color: #FFD700;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Background Color for Grid Items */
+.color-1 {
+    background-color: #80B2FF;
+}
+
+.color-2 {
+    background-color: #FFD75F;
+}
+
+.color-3 {
+    background-color: #B597FF;
+}
+
+.color-4 {
+    background-color: #FFFEF8;
+}
+
+/* Section Styling */
+.section {
+    padding: 4rem 1rem;
+    background-color: white;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #0B6623;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+}
+
+.reminders-section {
+    background-color: #80B2FF;
+}
+
+.policies-section {
+    background-color: #FFD75F;
+}
+
+.student-section {
+    background-color: #66C790;
+}
+
+.teacher-section {
+    background-color: #FFFEF8;
+}
+
+.resources-section {
+    background-color: #80B2FF;
+}
+
+.teacherMeet-section {
+    background-color: #FFD75F;
+}
+
+.support-section {
+    background-color: #66C790;
+}
+
+.events-section {
+    background-color: #FFFEF8;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+}
