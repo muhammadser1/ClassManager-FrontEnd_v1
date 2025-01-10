@@ -1,0 +1,198 @@
+/* Homepage Body Styling */
+.homepage-body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #b89ccfb0;
+    /* Light background for the homepage */
+}
+
+/* Homepage Container */
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header Styling */
+.homepage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #88a6b8;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.homepage-username {
+    flex: 1;
+}
+
+.homepage-logout-button {
+    background-color: #ff5e57;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.homepage-logout-button:hover {
+    background-color: #ff3e37;
+}
+
+/* Main Section Styling */
+.homepage-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns for the squares */
+    gap: 20px;
+    /* Space between squares */
+    padding: 5rem;
+    /* Space between header and squares */
+    padding-left: 25rem;
+    flex: 4;
+}
+
+.homepage-square {
+    position: relative;
+    /* Required for absolute positioning of the icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Stack icon and text vertically */
+    height: 250px;
+    width: 250px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(112, 0, 0);
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    /* Background color for better visibility */
+}
+
+
+.homepage-square:hover {
+    transform: scale(1.05);
+}
+
+/* Unique Colors for Each Square */
+.homepage-square-1 {
+    background-color: #ff9a9e;
+}
+
+.homepage-square-2 {
+    background-color: #fbc2eb;
+}
+
+.homepage-square-3 {
+    background-color: #a1c4fd;
+}
+
+.homepage-square-4 {
+    background-color: #85d6cf;
+}
+
+.homepage-square-5 {
+    background-color: #cfcbaf;
+}
+
+.homepage-square-6 {
+    background-color: #d4fc79;
+}
+
+/* Welcoming Text Section */
+.homepage-welcome {
+    text-align: center;
+    margin: 2rem 0;
+    /* Add space above and below */
+    color: #333;
+    /* Neutral text color */
+}
+
+.homepage-welcome h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.homepage-welcome p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Homepage.css */
+
+/* Add animation to the username text */
+.animated-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6f2c9c;
+    /* Green text color */
+    animation: text-glow 2s ease-in-out infinite, text-slide-in 1s ease-out forwards;
+    opacity: 0;
+    /* Start hidden for slide-in effect */
+}
+
+/* Glowing effect */
+@keyframes text-glow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px #d0d321, 0 0 20px #20d1b4, 0 0 30px #733cda;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #d0d321, 0 0 20px #20d1b4, 0 0 30px #733cda;
+    }
+}
+
+/* Slide-in effect */
+@keyframes text-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.square-icon {
+    position: absolute;
+    top: 15px;
+    /* Adjust top margin to move it to the middle-upper */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Align horizontally to center */
+    font-size: 3rem;
+    /* Large icon size */
+    color: #ffffff;
+    /* White color for visibility */
+    opacity: 0.9;
+    /* Slight transparency */
+    pointer-events: none;
+    /* Make icons non-interactive */
+}
+
+.homepage-square span {
+    font-size: 1rem;
+    /* Adjust text size */
+    color: rgb(112, 0, 0);
+    /* Match square text color */
+    margin-top: 10px;
+    /* Space between the icon and text */
+}

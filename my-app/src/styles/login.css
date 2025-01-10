@@ -1,0 +1,148 @@
+/* Main container */
+.login-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+/* Header */
+.login-header-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.login-title {
+    font-size: 1.8rem;
+    color: #4e54c8;
+}
+
+.login-emoji-container {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Form styles */
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    color: #555;
+}
+
+.login-input {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Button styles */
+.login-button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #4e54c8;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #8f94fb;
+}
+
+/* Error message */
+.login-error {
+    font-size: 0.9rem;
+    color: red;
+    text-align: center;
+}
+
+/* Helper text */
+.login-helper-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.login-link-button {
+    text-decoration: underline;
+    color: #4e54c8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.login-link-button:hover {
+    color: #8f94fb;
+}
+
+/* Role display */
+.login-role-display {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #4e54c8;
+    margin-top: 1rem;
+}
+
+/* Ensure login page background overrides global styles */
+.login-page {
+    background-color: #c2afaf;
+    /* Use a neutral background for the login page */
+    height: 100vh;
+    /* Full page height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust the width of the login container */
+.login-container {
+    background: rgb(173, 184, 164);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    /* Increase width */
+    width: 100%;
+    /* Ensure it takes the full width up to the max-width */
+}
+
+/* Container for the Go Home button */
+.login-home-button-container {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Style for the Go Home button */
+.login-home-button {
+    padding: 0.8rem 1.5rem;
+    background-color: #4e54c8;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-home-button:hover {
+    background-color: #8f94fb;
+}

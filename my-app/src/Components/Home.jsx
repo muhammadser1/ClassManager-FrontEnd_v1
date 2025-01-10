@@ -1,7 +1,16 @@
-import React from "react";
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import "../styles/home.css";
 
 const Home = () => {
+    const navigate = useNavigate(); // Hook to navigate programmatically
+
+    const goToLogin = () => {
+        navigate('/login'); // Navigate to /login when the button is clicked
+    };
+    const goToSignup = () => {
+        navigate('/signup'); // Navigate to /login when the button is clicked
+    };
     return (
         <>
             {/* Header */}
@@ -11,8 +20,9 @@ const Home = () => {
                     <span className="institute-name">Al Maram</span>
                 </div>
                 <div className="nav-right">
-                    <button className="auth-button">Sign In</button>
-                    <button className="auth-button">Sign Up</button>
+                    <button className="auth-button" onClick={goToLogin}>Sign In</button> {/* Click to navigate to Login */}
+                    <button className="auth-button" onClick={goToSignup}>Sign Up</button> {/* Click to navigate to Login */}
+
                 </div>
             </header>
 

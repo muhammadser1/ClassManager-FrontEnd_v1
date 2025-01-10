@@ -1,0 +1,122 @@
+/* Container Styling */
+/* Signup container styling */
+.signup-container {
+    background: rgb(186, 211, 174);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    /* Adjust the width */
+    max-width: 90%;
+    text-align: center;
+    animation: signup-fade-in 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center form content */
+}
+
+
+/* Header Styling */
+.signup-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.signup-title {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+/* Monkey Emoji */
+.signup-monkey-emoji {
+    font-size: 5rem;
+    margin: 0 auto;
+    transition: transform 0.2s ease;
+}
+
+/* Form Styling */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Input Styling */
+.signup-input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.signup-input:focus {
+    border-color: #ff9a9e;
+    outline: none;
+}
+
+/* Button Styling */
+.signup-button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #ff9a9e;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #f1c4fa;
+}
+
+/* Success Message */
+.signup-success {
+    color: green;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+/* Error Message */
+.signup-error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+/* Navigate Login Section */
+.signup-navigate-login {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.signup-link-button {
+    background: none;
+    border: none;
+    color: #ff9a9e;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.signup-link-button:hover {
+    color: #fad0c4;
+    transform: scale(1.05);
+}
+
+/* Ensure signup page has its own background */
+.signup-page {
+    background-color: #bfcab6;
+    /* Neutral background color */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

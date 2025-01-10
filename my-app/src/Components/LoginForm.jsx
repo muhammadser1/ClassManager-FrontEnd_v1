@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import jwt_decode from "jwt-decode"; // Decode JWT Token
-import "../styles/common.css"; // Import custom CSS
+import { jwtDecode } from "jwt-decode";
+import "../styles/login.css"; // Import custom CSS
 
 function LoginForm() {
     const navigate = useNavigate();
@@ -43,15 +43,23 @@ function LoginForm() {
             // Store the JWT token in localStorage
             localStorage.setItem("token", data.token);
 
-            // Decode the JWT to check the role and redirect
-            const decodedToken = jwt_decode(data.token);
+            // Decode the JWT token
+            const decodedToken = jwtDecode(data.token);
+
+            // Check if the token has expired
+            if (decodedToken.exp * 1000 < Date.now()) {
+                setError("Token has expired. Please log in again.");
+                return;
+            }
+
             const userRole = decodedToken.role;
             setRole(userRole); // Update the role state
+
             // Redirect based on role
             if (userRole === "admin") {
                 navigate("/admin-dashboard"); // Navigate to admin dashboard
             } else {
-                navigate("/home"); // Navigate to teacher's home page
+                navigate("/homepage"); // Navigate to teacher's home page
             }
         } catch (error) {
             console.error("Login error:", error.message);
@@ -67,57 +75,78 @@ function LoginForm() {
         navigate("/forgot-password");
     };
 
+    const goHome = () => {
+        navigate("/home");
+    };
+
     return (
-        <div className="container">
-            <div className="header">
-                <div
-                    className="monkey-emoji"
-                    style={{ transform: isTypingPassword ? "scale(1.1)" : "scale(1)" }}
-                >
-                    {isTypingPassword ? "🙈" : "🐵"}
+        <div className="login-page">
+            <div className="login-container">
+                <div className="login-header-container">
+                    <div
+                        className="login-emoji-container"
+                        style={{ transform: isTypingPassword ? "scale(1.5)" : "scale(1.5)" }}
+                    >
+                        {isTypingPassword ? "🙈" : "🐵"}
+                    </div>
+                    <h1 className="login-title">Login</h1>
                 </div>
-                <h1>Welcome Back, Teacher!</h1>
-                <p className="welcome-text">We're so glad to see you again. Log in to manage your lessons and inspire your students!</p>
+                <form className="login-form-container" onSubmit={handleSubmit}>
+                    <div className="login-input-container">
+                        <label htmlFor="username" className="login-label">Username</label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="name"
+                            className="login-input"
+                            placeholder="Enter your username"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="login-input-container">
+                        <label htmlFor="password" className="login-label">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            className="login-input"
+                            placeholder="Enter your password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            onFocus={handleFocus}
+                            onBlur={handleBlur}
+                            required
+                        />
+                    </div>
+                    {error && <p className="login-error">{error}</p>}
+                    <button type="submit" className="login-button">
+                        Login
+                    </button>
+                </form>
+                {role && <p className="login-role-display">Logged in as {role}</p>}
+
+                <p className="login-helper-text">
+                    Don't have an account?{" "}
+                    <button className="login-link-button" onClick={goToSignup}>
+                        Sign up here
+                    </button>
+                </p>
+
+                <p className="login-helper-text">
+                    <button className="login-link-button" onClick={goToForgotPassword}>
+                        Forgot Password?
+                    </button>
+                </p>
+
+                {/* New "Go Home" Button */}
+                <div className="login-home-button-container">
+                    <button className="login-home-button" onClick={goHome}>
+                        Go to Home
+                    </button>
+                </div>
             </div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Enter your username"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Enter your password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                    required
-                />
-                {error && <p className="error">{error}</p>} {/* Styled error */}
-                <button type="submit">Login</button>
-            </form>
-
-            {/* Display the role after login */}
-            {role && <p className="helper-text">Logged in as {role}</p>}
-
-            <p className="helper-text">
-                Don't have an account?{" "}
-                <button className="link-button" onClick={goToSignup}>
-                    Sign up here
-                </button>
-            </p>
-
-            {/* Forgot Password Link */}
-            <p className="helper-text">
-                <button className="link-button" onClick={goToForgotPassword}>
-                    Forgot Password?
-                </button>
-            </p>
         </div>
     );
 }
