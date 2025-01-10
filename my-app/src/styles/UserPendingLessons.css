@@ -1,0 +1,209 @@
+/* General Container */
+.pending-lessons-container {
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+    direction: rtl;
+    /* For right-to-left languages */
+}
+
+.pending-lessons-container h1 {
+    text-align: center;
+    color: #4c7e50;
+    margin-bottom: 1.5rem;
+}
+
+/* Search Input */
+.search-input {
+    display: block;
+    margin: 0 auto 2rem auto;
+    width: 50%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #4c7e50;
+    box-shadow: 0 0 5px rgba(76, 126, 80, 0.5);
+}
+
+/* Table Styling */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.pending-lessons-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.pending-lessons-table th,
+.pending-lessons-table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.pending-lessons-table th {
+    background-color: #4c7e50;
+    color: #fff;
+    font-weight: bold;
+}
+
+.pending-lessons-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.pending-lessons-table tr:hover {
+    background-color: #e0f7e7;
+}
+
+.pending-lessons-table td input {
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pending-lessons-table td input:focus {
+    outline: none;
+    border-color: #4c7e50;
+}
+
+/* Buttons */
+.action-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Save Button */
+.save-button {
+    background-color: #4caf50;
+    color: white;
+}
+
+.save-button:hover {
+    background-color: #3e8e41;
+}
+
+/* Cancel Button */
+.cancel-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Edit Button */
+.edit-button {
+    background-color: #ff9800;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #e68900;
+}
+
+/* Delete Button */
+.delete-button {
+    background-color: #e53935;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c62828;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.pagination button {
+    background-color: #4c7e50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button.active {
+    background-color: #388e3c;
+    font-weight: bold;
+}
+
+.pagination button:hover {
+    background-color: #357a38;
+}
+
+/* Back to Home Button */
+.back-to-home-button {
+    display: block;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #4c7e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-home-button:hover {
+    background-color: #3a5e40;
+}
+
+.pending-lessons-table th,
+.pending-lessons-table td {
+    text-align: center;
+    /* Center align all cells */
+}
+
+.pending-lessons-table th {
+    font-size: 1rem;
+}
+
+.pending-lessons-table td {
+    font-size: 0.9rem;
+}
+
+.pending-lessons-table th,
+.pending-lessons-table td {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+}
+
+.pending-lessons-table th {
+    background-color: #4c7e50;
+    color: white;
+    font-weight: bold;
+}
+
+.pending-lessons-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.pending-lessons-table tr:hover {
+    background-color: #e0f7e7;
+}

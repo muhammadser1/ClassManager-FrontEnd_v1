@@ -1,0 +1,87 @@
+/* General Container */
+.suggestion-container {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    /* Light background */
+    padding: 2rem;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Page Title */
+.suggestion-container h1 {
+    color: #4c7e50;
+    /* Greenish title color */
+    margin-bottom: 2rem;
+}
+
+/* Form Styling */
+.suggestion-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.suggestion-textarea {
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 1rem;
+}
+
+.suggestion-textarea:focus {
+    outline: none;
+    border-color: #4c7e50;
+    box-shadow: 0 0 5px rgba(76, 126, 80, 0.5);
+    /* Greenish glow */
+}
+
+/* Submit Button */
+.suggestion-submit {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #4c7e50;
+    /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.suggestion-submit:hover {
+    background-color: #3a5e40;
+    /* Darker green on hover */
+}
+
+/* Back to Homepage Button */
+.suggestion-back-button {
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #3b5998;
+    /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.suggestion-back-button:hover {
+    background-color: #2d4373;
+    /* Darker blue on hover */
+}
+
+/* Error Message */
+.error-message {
+    color: #d32f2f;
+    /* Red for errors */
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+}

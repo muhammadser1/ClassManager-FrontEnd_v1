@@ -1,0 +1,143 @@
+/* Page Body */
+.new_lesson_body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #97cce0, #8bc34a);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.new_lesson_container {
+    background-color: #bcd8d3;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    width: 500px;
+    text-align: center;
+}
+
+/* Header */
+.new_lesson_header h1 {
+    color: #148a1e;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.new_lesson_header p {
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+/* Form */
+.new_lesson_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Form Fields */
+.new_lesson_field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.new_lesson_field label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #4c7e50;
+}
+
+.new_lesson_field input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.new_lesson_field input:focus {
+    outline: none;
+    border-color: #4c7e50;
+}
+
+/* Submit Button */
+.new_lesson_submit_button {
+    background-color: #4c7e50;
+    color: white;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new_lesson_submit_button:hover {
+    background-color: #3a5e40;
+}
+
+/* Dropdown styling */
+.new_lesson_field select {
+    width: 100%;
+    /* Full width to match other inputs */
+    padding: 0.5rem;
+    /* Consistent padding */
+    font-size: 1rem;
+    /* Text size matching input fields */
+    color: #333;
+    /* Neutral text color */
+    border: 1px solid #ccc;
+    /* Light border */
+    border-radius: 5px;
+    /* Rounded corners for consistency */
+    background-color: #fff;
+    /* White background */
+    appearance: none;
+    /* Remove default browser styles */
+    outline: none;
+    /* Remove focus outline */
+    cursor: pointer;
+    /* Pointer cursor for interactivity */
+}
+
+.new_lesson_field select:focus {
+    border-color: #4c7e50;
+    /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(76, 126, 80, 0.5);
+    /* Subtle focus glow */
+}
+
+/* Optional: Add a down arrow indicator for dropdown */
+.new_lesson_field select::after {
+    content: "▼";
+    /* Arrow character */
+    position: absolute;
+    right: 10px;
+    /* Adjust placement */
+    pointer-events: none;
+    /* Ensure it doesn't block clicks */
+}
+
+/* Go Back Button */
+.new_lesson_back_button {
+    margin-top: 1rem;
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new_lesson_back_button:hover {
+    background-color: #c0392b;
+}

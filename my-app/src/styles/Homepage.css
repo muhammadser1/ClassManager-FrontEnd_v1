@@ -196,3 +196,12 @@
     margin-top: 10px;
     /* Space between the icon and text */
 }
+
+.square-text-arabic {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+    /* Adjust color for better readability */
+    font-weight: bold;
+}

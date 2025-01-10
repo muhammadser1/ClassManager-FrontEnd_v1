@@ -27,6 +27,14 @@ function Homepage() {
         navigate("/home"); // Redirect to the homepage
     };
 
+    const goToSubmitNewLesson = () => {
+        navigate("/submit-new-lesson"); // Navigate to Submit New Lesson page
+    };
+
+    const goToPendingLessons = () => {
+        navigate("/UserPendingLessons"); // Navigate to Pending Lessons page
+    };
+
     return (
         <div className="homepage-body">
             <div className="homepage-container">
@@ -46,34 +54,72 @@ function Homepage() {
                     <p>Use the options below to manage your lessons and tasks.</p>
                 </div>
 
-                {/* Main Section with 6 Squares */}
+                {/* Main Section with Squares */}
                 <main className="homepage-main">
-                    <div className="homepage-square homepage-square-1">
+                    <div
+                        className="homepage-square homepage-square-1"
+                        onClick={() => navigate("/user-lessons")}
+                    >
                         <div className="square-icon">&#128214;</div> {/* Book Icon */}
-                        <span>View Lessons</span>
+                        <span>
+                            View Lessons
+                            <br />
+                            <span className="square-text-arabic">عرض الدروس</span>
+                        </span>
                     </div>
-                    <div className="homepage-square homepage-square-2">
+                    <div
+                        className="homepage-square homepage-square-2"
+                        onClick={goToSubmitNewLesson}
+                    >
                         <div className="square-icon">&#9998;</div> {/* Pencil Icon */}
-                        <span>Submit New Lesson</span>
+                        <span>
+                            Submit New Lesson
+                            <br />
+                            <span className="square-text-arabic">إرسال درس جديد</span>
+                        </span>
                     </div>
-                    <div className="homepage-square homepage-square-3">
+                    <div
+                        className="homepage-square homepage-square-3"
+                        onClick={goToPendingLessons}
+                    >
                         <div className="square-icon">&#128338;</div> {/* Clock Icon */}
-                        <span>View Pending Lessons</span>
+                        <span>
+                            View Pending Lessons
+                            <br />
+                            <span className="square-text-arabic">عرض الدروس المعلقة</span>
+                        </span>
                     </div>
-                    <div className="homepage-square homepage-square-4">
+                    <div
+                        className="homepage-square homepage-square-4"
+                        onClick={() => navigate("/technical-problem")}
+                    >
                         <div className="square-icon">&#9888;</div> {/* Warning Icon */}
-                        <span>Technical Problem</span>
+                        <span>
+                            Technical Problem
+                            <br />
+                            <span className="square-text-arabic">مشكلة تقنية</span>
+                        </span>
                     </div>
-                    <div className="homepage-square homepage-square-5">
+                    <div
+                        className="homepage-square homepage-square-5"
+                        onClick={() => navigate("/suggestion")}
+                    >
                         <div className="square-icon">&#128161;</div> {/* Lightbulb Icon */}
-                        <span>Suggestion</span>
+                        <span>
+                            Suggestion
+                            <br />
+                            <span className="square-text-arabic">اقتراح</span>
+                        </span>
                     </div>
                     <div className="homepage-square homepage-square-6">
                         <div className="square-icon">&#128640;</div> {/* Rocket Icon */}
-                        <span>Coming Soon</span>
+                        <span>
+                            Coming Soon
+                            <br />
+                            <span className="square-text-arabic">قريبًا</span>
+                        </span>
                     </div>
                 </main>
-
 
             </div>
         </div>

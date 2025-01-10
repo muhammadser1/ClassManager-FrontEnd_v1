@@ -1,0 +1,71 @@
+/* General Container */
+.technical-problem-container {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 2rem;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Page Title */
+.technical-problem-container h1 {
+    color: #4c7e50;
+    margin-bottom: 2rem;
+}
+
+/* Form Styling */
+.technical-problem-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.technical-problem-textarea {
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 1rem;
+}
+
+.technical-problem-textarea:focus {
+    outline: none;
+    border-color: #4c7e50;
+    box-shadow: 0 0 5px rgba(76, 126, 80, 0.5);
+}
+
+/* Submit Button */
+.technical-problem-submit {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #4c7e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.technical-problem-submit:hover {
+    background-color: #3a5e40;
+}
+
+/* Back to Homepage Button */
+.technical-problem-back-button {
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #3b5998;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.technical-problem-back-button:hover {
+    background-color: #2d4373;
+}
