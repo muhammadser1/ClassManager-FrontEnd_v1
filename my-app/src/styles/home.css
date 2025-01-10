@@ -267,7 +267,7 @@ p {
 
 /* Resources Section */
 .resources-section {
-    background-color: #80B2FF;
+    background-color: #97a1b1;
     padding: 4rem 1rem;
 }
 
@@ -737,4 +737,65 @@ p {
     height: auto;
     object-fit: contain;
     margin-bottom: 1.5rem;
+}
+
+/* Resources Section */
+.resources-section {
+    text-align: center;
+    margin: 2rem 0;
+    font-family: Arial, sans-serif;
+    background-color: #66C790;
+    ;
+}
+
+/* Buttons Container */
+.resources-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Button Styles */
+.resource-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 3%;
+}
+
+.resource-button:hover {
+    transform: scale(1.05);
+}
+
+/* Unique Styles for Each Button */
+.elementary {
+    background-color: #af4c7a;
+    color: white;
+}
+
+.elementary:hover {
+    background-color: #388e3c;
+}
+
+.middle {
+    background-color: #2196f3;
+    color: white;
+}
+
+.middle:hover {
+    background-color: #1976d2;
+}
+
+.secondary {
+    background-color: #ff9800;
+    color: white;
+}
+
+.secondary:hover {
+    background-color: #f57c00;
 }

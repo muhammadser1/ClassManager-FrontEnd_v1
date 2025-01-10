@@ -180,15 +180,19 @@ function SubmitLesson() {
 
                     <div className="new_lesson_field">
                         <label htmlFor="educationLevel">المستوى التعليمي</label>
-                        <input
-                            type="text"
+                        <select
                             id="educationLevel"
                             value={educationLevel}
                             onChange={(e) => setEducationLevel(e.target.value)}
-                            placeholder="مثال: ابتدائي، ثانوي"
                             required
-                        />
+                        >
+                            <option value="">اختر المستوى التعليمي</option>
+                            <option value="ابتدائي">ابتدائي</option>
+                            <option value="اعدادي">اعدادي</option>
+                            <option value="ثانوي">ثانوي</option>
+                        </select>
                     </div>
+
 
                     <div className="new_lesson_field">
                         <label htmlFor="subject">الموضوع</label>

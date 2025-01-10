@@ -8,6 +8,7 @@ function SignupForm() {
         name: "",
         email: "",
         password: "",
+        birthday: "", // Added birthday field
     });
     const [isTypingPassword, setIsTypingPassword] = useState(false); // Track password input focus
     const [error, setError] = useState("");
@@ -92,6 +93,15 @@ function SignupForm() {
                         onBlur={handleBlur}
                         required
                     />
+                    <input
+                        type="date"
+                        name="birthday"
+                        className="signup-input"
+                        placeholder="Enter your birthday"
+                        value={formData.birthday}
+                        onChange={handleChange}
+                        required
+                    />
                     {error && <p className="signup-error">{error}</p>}
                     {success && <p className="signup-success">{success}</p>}
                     <button type="submit" className="signup-button">Signup</button>
@@ -107,7 +117,6 @@ function SignupForm() {
             </div>
         </div>
     );
-
 }
 
 export default SignupForm;

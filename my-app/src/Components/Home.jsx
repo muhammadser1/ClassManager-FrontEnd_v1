@@ -1,16 +1,38 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../styles/home.css";
 
 const Home = () => {
-    const navigate = useNavigate(); // Hook to navigate programmatically
+    const navigate = useNavigate();
+    const [birthdays, setBirthdays] = useState([]);
 
     const goToLogin = () => {
-        navigate('/login'); // Navigate to /login when the button is clicked
+        navigate('/login');
     };
+
     const goToSignup = () => {
-        navigate('/signup'); // Navigate to /login when the button is clicked
+        navigate('/signup');
     };
+
+    // Fetch today's birthdays from the backend
+    useEffect(() => {
+        const fetchBirthdays = async () => {
+            try {
+                const response = await fetch("http://localhost:8000/teacher/teachers-birthdays");
+                const data = await response.json();
+                console.log("Fetched data:", data);
+
+                // Safely update birthdays state
+                setBirthdays(data.birthday_teachers || []);
+            } catch (error) {
+                console.error("Error fetching birthdays:", error);
+            }
+        };
+
+        fetchBirthdays();
+    }, []);
+
+
     return (
         <>
             {/* Header */}
@@ -20,31 +42,27 @@ const Home = () => {
                     <span className="institute-name">Al Maram</span>
                 </div>
                 <div className="nav-right">
-                    <button className="auth-button" onClick={goToLogin}>Sign In</button> {/* Click to navigate to Login */}
-                    <button className="auth-button" onClick={goToSignup}>Sign Up</button> {/* Click to navigate to Login */}
-
+                    <button className="auth-button" onClick={goToLogin}>Sign In</button>
+                    <button className="auth-button" onClick={goToSignup}>Sign Up</button>
                 </div>
             </header>
 
             {/* Left-Right Section */}
             <div className="home-container">
-                {/* Left Section */}
                 <div className="left-section">
                     <div className="title">
-                        {/* Curved Text for LEARNING */}
                         <div className="classroom-container">
                             <span className="classroom curved-text">LEARNING</span>
                         </div>
-                        {/* Curved Downward Text for ZONE */}
                         <div className="hub-container">
                             <span className="hub curved-down">ZONE</span>
                         </div>
                     </div>
                     <div className="classroom-container">
                         <span className="classroom curved-text">Al Maram</span>
-                    </div>                </div>
+                    </div>
+                </div>
 
-                {/* Right Section with Anchor Links */}
                 <div className="right-section">
                     <a href="#reminders">
                         <div className="grid-item color-1">
@@ -62,11 +80,10 @@ const Home = () => {
                             <span>Classroom Policies</span>
                         </div>
                     </a>
-
                     <a href="#suggestions">
                         <div className="grid-item color-4">
                             <div className="icon">
-                                <img src="src/images/idea.png" alt="suggestions" />
+                                <img src="src/images/idea.png" alt="Suggestions Icon" />
                             </div>
                             <span>Suggestions</span>
                         </div>
@@ -79,7 +96,6 @@ const Home = () => {
                             <span>Class Resources</span>
                         </div>
                     </a>
-
                     <a href="#support">
                         <div className="grid-item color-1">
                             <div className="icon">
@@ -97,13 +113,11 @@ const Home = () => {
                         </div>
                     </a>
                 </div>
-
             </div>
 
-            {/* Sections with Unique Classes */}
+            {/* Sections */}
             <section id="reminders" className="reminders-section">
                 <h2>Reminders</h2>
-                {/* Two Square Boxes in the Reminders Section */}
                 <div className="reminder-boxes">
                     <div className="reminder-box color-1">
                         <h3>Reminder 1</h3>
@@ -118,68 +132,30 @@ const Home = () => {
 
             <section id="policies" className="policies-section">
                 <h2>Classroom Policies</h2>
-
                 <div className="rules-list">
-                    <div className="rule-box">
-                        Rule 1: Be respectful to others and their opinions.
-                    </div>
-                    <div className="rule-box">
-                        Rule 2: Keep your workspace clean and organized.
-                    </div>
-                    <div className="rule-box">
-                        Rule 3: Always ask questions when you're unsure.
-                    </div>
-                    <div className="rule-box">
-                        Rule 4: Be on time for class and stay engaged.
-                    </div>
-                    <div className="rule-box">
-                        Rule 5: Keep your devices on silent or vibrate during class.
-                    </div>
+                    <div className="rule-box">Rule 1: Respect each other.</div>
+                    <div className="rule-box">Rule 2: Be on time.</div>
+                    <div className="rule-box">Rule 3: Keep your workspace clean.</div>
+                    <div className="rule-box">Rule 4: Communicate issues promptly.</div>
+                    <div className="rule-box">Rule 5: Be prepared for class.</div>
                 </div>
             </section>
-
-
 
             <section id="resources" className="resources-section">
                 <h2>Class Resources</h2>
-                <p>Access all the necessary resources for your class.</p>
-            </section>
-
-
-            <section id="support" className="support-section">
-                <h2>Need Support?</h2>
-                <p>If you are facing technical issues or have questions, feel free to reach out to me!</p>
-
-                <div className="contact-box">
-                    <form className="contact-form">
-                        <input
-                            type="text"
-                            placeholder="Your Name"
-                            required
-                            name="name"
-                        />
-                        <input
-                            type="email"
-                            placeholder="Your Email"
-                            required
-                            name="email"
-                        />
-                        <textarea
-                            placeholder="Describe your issue..."
-                            rows="4"
-                            required
-                            name="message"
-                        ></textarea>
-                        <button type="submit">Send Message</button>
-                    </form>
-
-                    <div className="contact-details">
-                        <p>For immediate assistance, you can contact me directly:</p>
-                        <p><strong>Phone:</strong> 0538250579</p>
-                        <p><strong>Name:</strong> Mohammad Sarahni</p>
-                    </div>
+                <div className="resources-buttons">
+                    <button className="resource-button elementary" onClick={() => window.open("https://drive.google.com/folder1", "_blank")}>
+                        ابتدائي
+                    </button>
+                    <button className="resource-button middle" onClick={() => window.open("https://drive.google.com/folder2", "_blank")}>
+                        اعدادي
+                    </button>
+                    <button className="resource-button secondary" onClick={() => window.open("https://drive.google.com/folder3", "_blank")}>
+                        ثانوي
+                    </button>
                 </div>
             </section>
+
             <section id="suggestions" className="suggestions-section">
                 <h2>We Value Your Suggestions</h2>
                 <p>Share your ideas to help us improve and make your experience better.</p>
@@ -213,10 +189,37 @@ const Home = () => {
                 </form>
             </section>
 
-            <section id="events" className="events-section">
-                <h2>Happy Birthday to Teacher 1</h2>
-                <p>We wish you all the best on your special day! 🎉🎂</p>
+            <section id="support" className="support-section">
+                <h2>Need Support?</h2>
+                <p>If you are facing technical issues or have questions, feel free to reach out to me!</p>
+                <div className="contact-box">
+                    <form className="contact-form">
+                        <input type="text" placeholder="Your Name" required />
+                        <input type="email" placeholder="Your Email" required />
+                        <textarea placeholder="Describe your issue..." rows="4" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <div className="contact-details">
+                        <p><strong>Phone:</strong> 0538250579</p>
+                        <p><strong>Name:</strong> Mohammad Sarahni</p>
+                    </div>
+                </div>
+            </section>
 
+            <section id="events" className="events-section">
+                <h2>Today's Birthdays 🎉</h2>
+                {birthdays && birthdays.length > 0 ? ( // Check if birthdays array is populated
+                    <p>
+                        🎂 Happy Birthday to {birthdays.map((teacher, index) => (
+                            <strong key={index}>
+                                {teacher.name}{index < birthdays.length - 1 ? ", " : ""}
+                            </strong>
+                        ))}!
+                        We wish you a wonderful day filled with happiness and joy! 🎉🎂
+                    </p>
+                ) : (
+                    <p>No birthdays today. 😊</p>
+                )}
                 <div className="event-image">
                     <img
                         src="src/images/events-icon.png"
@@ -224,12 +227,11 @@ const Home = () => {
                         className="balloons-img"
                     />
                 </div>
-
-                <p>May this year bring you happiness, success, and many more celebrations!</p>
             </section>
 
 
-            {/* Footer */}
+
+
             <footer className="footer">
                 <p>Contact us: info@myinstitute.com | +1 234 567 890</p>
                 <p>Follow us on social media!</p>
