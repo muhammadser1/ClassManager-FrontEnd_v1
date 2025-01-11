@@ -799,3 +799,89 @@ p {
 .secondary:hover {
     background-color: #f57c00;
 }
+
+.schedule-section-unique-schedule {
+    background-color: #baade9;
+
+}
+
+/* Schedule Section */
+.unique-schedule {
+    background-color: #baade9;
+    /* Change to a neutral white background */
+    border: 1px solid #ddd;
+    /* Add a border for a clean layout */
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    /* Center the content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add subtle shadow */
+
+}
+
+/* Heading and Description */
+.schedule-heading {
+
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a271b;
+    /* Use green for the heading */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.schedule-description {
+    font-size: 1.2rem;
+    color: #140b0b;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Event List */
+.schedule-event-list {
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 600px;
+    background-color: #c3bcdd;
+    /* Subtle background for the event list */
+    border-radius: 8px;
+}
+
+.schedule-events {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.schedule-event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.schedule-event:hover {
+    background-color: #f1f1f1;
+    /* Highlight event on hover */
+}
+
+.schedule-event:last-child {
+    border-bottom: none;
+}
+
+.event-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.event-date {
+    font-style: italic;
+    color: #3b2a2a;
+}

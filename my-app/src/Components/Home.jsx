@@ -4,6 +4,8 @@ import "../styles/home.css";
 
 const Home = () => {
     const navigate = useNavigate();
+    const [events, setEvents] = useState([]); // Ensure events is initialized
+
     const [birthdays, setBirthdays] = useState([]);
 
     const goToLogin = () => {
@@ -16,6 +18,19 @@ const Home = () => {
 
     // Fetch today's birthdays from the backend
     useEffect(() => {
+        const fetchEvents = async () => {
+            try {
+                const response = await fetch("http://localhost:8000/event/events");
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log("Fetched events data:", data);
+                setEvents(data || []);
+            } catch (error) {
+                console.error("Error fetching events:", error);
+            }
+        };
         const fetchBirthdays = async () => {
             try {
                 const response = await fetch("http://localhost:8000/teacher/teachers-birthdays");
@@ -28,7 +43,7 @@ const Home = () => {
                 console.error("Error fetching birthdays:", error);
             }
         };
-
+        fetchEvents();
         fetchBirthdays();
     }, []);
 
@@ -96,12 +111,12 @@ const Home = () => {
                             <span>Class Resources</span>
                         </div>
                     </a>
-                    <a href="#support">
+                    <a href="#schedule">
                         <div className="grid-item color-1">
                             <div className="icon">
                                 <img src="src/images/support-icon.png" alt="Support Icon" />
                             </div>
-                            <span>Support</span>
+                            <span>Class Schedule</span>
                         </div>
                     </a>
                     <a href="#events">
@@ -141,20 +156,67 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id="resources" className="resources-section">
-                <h2>Class Resources</h2>
+            <section id="resources" className="resources-section unique-resources">
+                <h2 className="resources-heading">Class Resources</h2>
                 <div className="resources-buttons">
-                    <button className="resource-button elementary" onClick={() => window.open("https://drive.google.com/folder1", "_blank")}>
+                    <button className="resource-button resource-elementary" onClick={() => window.open("https://drive.google.com/folder1", "_blank")}>
                         ابتدائي
                     </button>
-                    <button className="resource-button middle" onClick={() => window.open("https://drive.google.com/folder2", "_blank")}>
+                    <button className="resource-button resource-middle" onClick={() => window.open("https://drive.google.com/folder2", "_blank")}>
                         اعدادي
                     </button>
-                    <button className="resource-button secondary" onClick={() => window.open("https://drive.google.com/folder3", "_blank")}>
+                    <button className="resource-button resource-secondary" onClick={() => window.open("https://drive.google.com/folder3", "_blank")}>
                         ثانوي
                     </button>
                 </div>
             </section>
+
+            <section id="events" className="events-section">
+                <h2>Today's Birthdays 🎉</h2>
+                {birthdays && birthdays.length > 0 ? ( // Check if birthdays array is populated
+                    <p>
+                        🎂 Happy Birthday to {birthdays.map((teacher, index) => (
+                            <strong key={index}>
+                                {teacher.name}{index < birthdays.length - 1 ? ", " : ""}
+                            </strong>
+                        ))}!
+                        We wish you a wonderful day filled with happiness and joy! 🎉🎂
+                    </p>
+                ) : (
+                    <p>No birthdays today. 😊</p>
+                )}
+                <div className="event-image">
+                    <img
+                        src="src/images/events-icon.png"
+                        alt="Happy Birthday Balloons"
+                        className="balloons-img"
+                    />
+                </div>
+            </section>
+
+            <section id="schedule" className="schedule-section-unique-schedule">
+                <h2 className="schedule-heading">Class Schedule and Upcoming Events</h2>
+                <p className="schedule-description">Stay updated with our schedule and never miss an event!</p>
+                <div className="schedule-event-list">
+                    <ul className="schedule-events">
+                        {events.length > 0 ? (
+                            events.map((event, index) => (
+                                <li className="schedule-event" key={index}>
+                                    <strong className="event-title">{event.title}:</strong>
+                                    <span className="event-date">
+                                        {new Date(event.date).toLocaleString()} ({event.hours} hours)
+                                    </span>
+                                </li>
+                            ))
+                        ) : (
+                            <p>No upcoming events.</p>
+                        )}
+                    </ul>
+                </div>
+            </section>
+
+
+
 
             <section id="suggestions" className="suggestions-section">
                 <h2>We Value Your Suggestions</h2>
@@ -188,48 +250,6 @@ const Home = () => {
                     </button>
                 </form>
             </section>
-
-            <section id="support" className="support-section">
-                <h2>Need Support?</h2>
-                <p>If you are facing technical issues or have questions, feel free to reach out to me!</p>
-                <div className="contact-box">
-                    <form className="contact-form">
-                        <input type="text" placeholder="Your Name" required />
-                        <input type="email" placeholder="Your Email" required />
-                        <textarea placeholder="Describe your issue..." rows="4" required></textarea>
-                        <button type="submit">Send Message</button>
-                    </form>
-                    <div className="contact-details">
-                        <p><strong>Phone:</strong> 0538250579</p>
-                        <p><strong>Name:</strong> Mohammad Sarahni</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="events" className="events-section">
-                <h2>Today's Birthdays 🎉</h2>
-                {birthdays && birthdays.length > 0 ? ( // Check if birthdays array is populated
-                    <p>
-                        🎂 Happy Birthday to {birthdays.map((teacher, index) => (
-                            <strong key={index}>
-                                {teacher.name}{index < birthdays.length - 1 ? ", " : ""}
-                            </strong>
-                        ))}!
-                        We wish you a wonderful day filled with happiness and joy! 🎉🎂
-                    </p>
-                ) : (
-                    <p>No birthdays today. 😊</p>
-                )}
-                <div className="event-image">
-                    <img
-                        src="src/images/events-icon.png"
-                        alt="Happy Birthday Balloons"
-                        className="balloons-img"
-                    />
-                </div>
-            </section>
-
-
 
 
             <footer className="footer">
