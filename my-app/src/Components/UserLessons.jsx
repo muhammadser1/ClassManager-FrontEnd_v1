@@ -11,7 +11,6 @@ const UserLessons = () => {
     const rowsPerPage = 10;
     const navigate = useNavigate();
 
-    // Array of positive Arabic thank-you sentences
     const thankYouMessages = [
         ".شكراً لك. نقدر جهودك الطيبة",
         ".عملك الرائع يُحدث فرقاً",
@@ -34,7 +33,6 @@ const UserLessons = () => {
         ".جهودك تُحدث فرقاً حقيقياً في حياتنا",
         ".شكراً لإسهاماتك التي لا تُقدر بثمن"
     ];
-
 
     // Fetch teacher name from token
     useEffect(() => {
@@ -67,6 +65,13 @@ const UserLessons = () => {
         }
     };
 
+    // Calculate total hours for each education level
+    const calculateTotalHours = (level) => {
+        return approvedLessons
+            .filter((lesson) => lesson.education_level === level)
+            .reduce((total, lesson) => total + lesson.hours, 0);
+    };
+
     // Search and pagination
     const filteredLessons = approvedLessons.filter((lesson) =>
         lesson.student_name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -87,6 +92,22 @@ const UserLessons = () => {
     return (
         <div className="user-lessons-container">
             <h1>الدروس الموافق عليها</h1>
+            {/* Total Hours Summary */}
+            <div className="summary-container">
+                <div className="summary-box">
+                    <h3>ابتدائي</h3>
+                    <p>{calculateTotalHours("ابتدائي")} ساعة</p>
+                </div>
+                <div className="summary-box">
+                    <h3>إعدادي</h3>
+                    <p>{calculateTotalHours("اعدادي")} ساعة</p>
+                </div>
+                <div className="summary-box">
+                    <h3>ثانوي</h3>
+                    <p>{calculateTotalHours("ثانوي")} ساعة</p>
+                </div>
+            </div>
+
             <input
                 type="text"
                 placeholder="ابحث عن طريق اسم الطالب"

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode"; // Import jwt-decode
-import "../styles/Suggestion.css"; // Import CSS for styling
+import { jwtDecode } from "jwt-decode"; // Corrected import
+import "../styles/Suggestion.css";
 
 function Suggestion() {
     const [suggestion, setSuggestion] = useState("");
@@ -10,7 +10,6 @@ function Suggestion() {
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
-    // Decode token to fetch username and email
     useEffect(() => {
         const token = localStorage.getItem("token");
 
@@ -44,16 +43,46 @@ function Suggestion() {
             navigate("/login");
         }
     }, [navigate]);
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const confirmed = window.confirm(`تم إرسال الاقتراح بنجاح بواسطة: ${username} (${email})\nاضغط موافق للعودة إلى الصفحة الرئيسية.`);
-        if (confirmed) {
-            navigate("/homepage"); // Navigate to homepage
+        // Create the payload to match the backend schema
+        const suggestionData = {
+            username,          // String: matches "username" in the backend
+            email,             // String: matches "email" in the backend
+            msg: suggestion,   // String: matches "msg" in the backend
+        };
+
+        // Debugging: Print the payload to ensure correctness
+        console.log("Sending data:", JSON.stringify(suggestionData));
+
+        try {
+            const response = await fetch("http://127.0.0.1:8000/teacher/submit-suggestion", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "accept": "application/json", // Matches the backend expectation
+                },
+                body: JSON.stringify(suggestionData), // Convert object to JSON
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error("Backend validation error:", errorData);
+                alert(`Error: ${errorData.detail[0]?.msg || "Unknown error occurred"}`);
+                return;
+            }
+
+            const data = await response.json();
+            alert(`تم إرسال الاقتراح بنجاح: ${data.message}`);
+            navigate("/homepage");
+            setSuggestion("");
+        } catch (error) {
+            console.error("Error submitting suggestion:", error.message);
+            alert("حدث خطأ أثناء إرسال الاقتراح. حاول مرة أخرى لاحقًا.");
         }
-        setSuggestion(""); // Clear the form
     };
+
 
     return (
         <div className="suggestion-container" dir="rtl">

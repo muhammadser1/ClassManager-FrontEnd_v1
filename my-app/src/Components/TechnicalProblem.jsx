@@ -47,15 +47,44 @@ function TechnicalProblem() {
         }
     }, [navigate]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Show confirmation message and redirect to homepage
-        const confirmed = window.confirm(`تم إرسال المشكلة بنجاح بواسطة: ${username} (${email})\nاضغط موافق للعودة إلى الصفحة الرئيسية.`);
-        if (confirmed) {
-            navigate("/homepage"); // Navigate to homepage
+        // Prepare the payload
+        const problemData = {
+            username,
+            email,
+            msg: description, // Use the field name "description" to align with the backend
+        };
+
+        // Debugging: Print the payload to ensure correctness
+        console.log("Submitting Problem Data:", problemData);
+
+        try {
+            const response = await fetch("http://127.0.0.1:8000/teacher/submit-support-request", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "accept": "application/json", // Matches the backend expectation
+                },
+                body: JSON.stringify(problemData), // Convert object to JSON
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error("Backend validation error:", errorData);
+                alert(`Error: ${errorData.detail[0]?.msg || "Unknown error occurred"}`);
+                return;
+            }
+
+            const data = await response.json();
+            alert(`تم إرسال المشكلة بنجاح: ${data.message}`);
+            navigate("/homepage");
+            setDescription("");
+        } catch (error) {
+            console.error("Error submitting problem:", error.message);
+            alert("حدث خطأ أثناء إرسال المشكلة. حاول مرة أخرى لاحقًا.");
         }
-        setDescription(""); // Clear the form
     };
 
     return (
