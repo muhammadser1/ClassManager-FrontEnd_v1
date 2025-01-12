@@ -120,7 +120,6 @@ function Homepage() {
                         </span>
                     </div>
                 </main>
-
             </div>
         </div>
     );

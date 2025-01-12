@@ -57,7 +57,7 @@ function LoginForm() {
 
             // Redirect based on role
             if (userRole === "admin") {
-                navigate("/admin-dashboard"); // Navigate to admin dashboard
+                navigate("/HomepageAdmin"); // Navigate to admin dashboard
             } else {
                 navigate("/homepage"); // Navigate to teacher's home page
             }
@@ -72,7 +72,7 @@ function LoginForm() {
     };
 
     const goToForgotPassword = () => {
-        navigate("/forgot-password");
+        navigate("/ForgotPassword");
     };
 
     const goHome = () => {

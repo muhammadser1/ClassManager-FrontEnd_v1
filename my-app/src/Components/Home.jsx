@@ -159,7 +159,7 @@ const Home = () => {
             <section id="resources" className="resources-section unique-resources">
                 <h2 className="resources-heading">Class Resources</h2>
                 <div className="resources-buttons">
-                    <button className="resource-button resource-elementary" onClick={() => window.open("https://drive.google.com/folder1", "_blank")}>
+                    <button className="resource-button resource-elementary" onClick={() => window.open("https://drive.google.com/drive/folders/1KkhksO7lZZLgCFnbOdeHj6LA5rzP7LNG?usp=sharing", "_blank")}>
                         ابتدائي
                     </button>
                     <button className="resource-button resource-middle" onClick={() => window.open("https://drive.google.com/folder2", "_blank")}>
@@ -219,36 +219,7 @@ const Home = () => {
 
 
             <section id="suggestions" className="suggestions-section">
-                <h2>We Value Your Suggestions</h2>
-                <p>Share your ideas to help us improve and make your experience better.</p>
 
-                <form>
-                    <textarea
-                        placeholder="What suggestions do you have for us?"
-                        rows="5"
-                        style={{
-                            width: "50%", // Adjust the width
-                            padding: "1rem",
-                            borderRadius: "12px", // More rounded corners
-                            borderColor: "#ccc",
-                            marginBottom: "1rem",
-                            fontSize: "1rem", // Optional: to make the text inside look more consistent
-                        }}
-                    />
-                    <br />
-                    <button
-                        type="submit"
-                        style={{
-                            backgroundColor: "#C7BBE2",
-                            color: "#fff",
-                            padding: "1rem 2rem",
-                            borderRadius: "8px",
-                            marginTop: "1rem"
-                        }}
-                    >
-                        Submit Suggestion
-                    </button>
-                </form>
             </section>
 
 

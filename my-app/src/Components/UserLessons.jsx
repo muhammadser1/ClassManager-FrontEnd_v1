@@ -91,8 +91,16 @@ const UserLessons = () => {
 
     return (
         <div className="user-lessons-container">
-            <h1>الدروس الموافق عليها</h1>
+
+            <h1 style={{ marginBottom: "30px" }}>الدروس الموافق عليها</h1>
             {/* Total Hours Summary */}
+            <input
+                type="text"
+                placeholder="ابحث عن طريق اسم الطالب"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="search-input"
+            />
             <div className="summary-container">
                 <div className="summary-box">
                     <h3>ابتدائي</h3>
@@ -108,13 +116,7 @@ const UserLessons = () => {
                 </div>
             </div>
 
-            <input
-                type="text"
-                placeholder="ابحث عن طريق اسم الطالب"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-input"
-            />
+
             <div className="table-wrapper">
                 <table className="user-lessons-table">
                     <thead>

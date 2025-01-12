@@ -1,0 +1,200 @@
+/* General Body Styling */
+body.admin-pending-lessons-body {
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafc;
+    /* Light gray background */
+    font-family: "Arial", sans-serif;
+    color: #333;
+    direction: rtl;
+    /* Right-to-left alignment */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align the content towards the top */
+}
+
+/* General Container */
+.admin-pending-lessons-container {
+    padding: 2rem;
+    background-color: #ffffff;
+    max-width: 1100px;
+    margin: 3rem auto;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.admin-pending-lessons-header {
+    text-align: center;
+    color: #2e7d32;
+    /* Dark green for the header */
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+/* Search Input */
+.admin-pending-lessons-search-input {
+    width: 60%;
+    margin: 0 auto 1.5rem auto;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    /* Center the placeholder and input text */
+}
+
+/* Table Styling */
+.admin-pending-lessons-table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-pending-lessons-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.admin-pending-lessons-table th,
+.admin-pending-lessons-table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: center;
+    /* Align text in the center of cells */
+    font-size: 0.9rem;
+    vertical-align: middle;
+    /* Center content vertically */
+}
+
+.admin-pending-lessons-table th {
+    background-color: #4caf50;
+    /* Green header background */
+    color: white;
+    font-weight: bold;
+}
+
+.admin-pending-lessons-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Light gray for alternating rows */
+}
+
+.admin-pending-lessons-table tr:hover {
+    background-color: #e8f5e9;
+    /* Light green hover effect */
+}
+
+/* Action Buttons inside the table */
+.admin-pending-lessons-delete-button,
+.admin-pending-lessons-edit-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Delete Button */
+.admin-pending-lessons-delete-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.admin-pending-lessons-delete-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Edit Button */
+.admin-pending-lessons-edit-button {
+    background-color: #ff9800;
+    color: white;
+}
+
+.admin-pending-lessons-edit-button:hover {
+    background-color: #e68900;
+}
+
+/* Pagination */
+.admin-pending-lessons-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.admin-pending-lessons-page-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-pending-lessons-page-button.active {
+    background-color: #2e7d32;
+    font-weight: bold;
+}
+
+.admin-pending-lessons-page-button:hover {
+    background-color: #388e3c;
+}
+
+/* Back Button */
+.admin-pending-lessons-back-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+    display: block;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-pending-lessons-back-button:hover {
+    background-color: #388e3c;
+}
+
+.admin-pending-lessons-approve-button {
+    background-color: #4caf50;
+    /* Green for approve */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease;
+}
+
+.admin-pending-lessons-approve-button:hover {
+    background-color: #388e3c;
+}
+
+.admin-pending-lessons-reject-button {
+    background-color: #f44336;
+    /* Red for reject */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease;
+}
+
+.admin-pending-lessons-reject-button:hover {
+    background-color: #d32f2f;
+}

@@ -50,30 +50,22 @@ function TechnicalProblem() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Prepare the payload
-        const problemData = {
-            username,
-            email,
-            msg: description, // Use the field name "description" to align with the backend
-        };
-
-        // Debugging: Print the payload to ensure correctness
-        console.log("Submitting Problem Data:", problemData);
+        // Format the query parameter with username and description
+        const formattedMsg = `${username}:{${description}}`;
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/teacher/submit-support-request", {
-                method: "POST",
+            const response = await fetch(`http://127.0.0.1:8000/teacher/submit-suggestion?msg=${encodeURIComponent(formattedMsg)}`, {
+                method: "POST", // Ensure this matches your backend's expected method
                 headers: {
                     "Content-Type": "application/json",
-                    "accept": "application/json", // Matches the backend expectation
+                    "accept": "application/json",
                 },
-                body: JSON.stringify(problemData), // Convert object to JSON
             });
 
             if (!response.ok) {
                 const errorData = await response.json();
                 console.error("Backend validation error:", errorData);
-                alert(`Error: ${errorData.detail[0]?.msg || "Unknown error occurred"}`);
+                alert(`Error: ${errorData.detail || "Unknown error occurred"}`);
                 return;
             }
 

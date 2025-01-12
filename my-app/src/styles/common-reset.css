@@ -1,0 +1,86 @@
+/* Scoped styles for ResetPassword component */
+
+/* Container */
+.reset-password-container {
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(135deg, #ffb6c1, #ff9a8b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 2rem;
+    color: #333;
+}
+
+/* Reset Password Box */
+.reset-password-header h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Input Styling */
+.reset-password-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #f1f1f1;
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.reset-password-input:focus {
+    border-color: #ff9a8b;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 154, 139, 0.6);
+}
+
+/* Button Styling */
+.reset-password-submit {
+    padding: 0.9rem;
+    width: 100%;
+    background-color: #ff9a8b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.reset-password-submit:hover {
+    background-color: #ffb6c1;
+    transform: scale(1.05);
+}
+
+/* Error and Success Messages */
+.reset-password-error {
+    color: red;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.reset-password-success {
+    color: green;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

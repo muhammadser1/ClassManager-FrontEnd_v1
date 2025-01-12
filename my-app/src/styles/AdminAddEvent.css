@@ -1,0 +1,94 @@
+/* Container Styling */
+.admin-add-event-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f7f7f7;
+}
+
+/* Form Wrapper Styling */
+.admin-add-event-form-wrapper {
+    max-width: 500px;
+    width: 90%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Header Styling */
+.admin-add-event-form-wrapper h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+/* Input Styling */
+.admin-add-event-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.admin-add-event-input:focus {
+    border-color: #6c63ff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+}
+
+/* Button Styling */
+.admin-add-event-submit-button {
+    width: 100%;
+    padding: 10px;
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.admin-add-event-submit-button:hover {
+    background: #5a54cc;
+}
+
+/* Back Button Styling */
+.admin-add-event-back-button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.admin-add-event-back-button:hover {
+    background: #bbb;
+}
+
+/* Success Message Styling */
+.admin-add-event-success {
+    color: green;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* Error Message Styling */
+.admin-add-event-error {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}

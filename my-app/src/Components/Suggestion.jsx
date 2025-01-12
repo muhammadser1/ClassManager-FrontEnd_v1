@@ -46,37 +46,27 @@ function Suggestion() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Create the payload to match the backend schema
-        const suggestionData = {
-            username,          // String: matches "username" in the backend
-            email,             // String: matches "email" in the backend
-            msg: suggestion,   // String: matches "msg" in the backend
-        };
-
-        // Debugging: Print the payload to ensure correctness
-        console.log("Sending data:", JSON.stringify(suggestionData));
+        // Format the message to include the username
+        const formattedMsg = `${username}:{${suggestion}}`;
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/teacher/submit-suggestion", {
-                method: "POST",
+            const response = await fetch(`http://127.0.0.1:8000/teacher/submit-suggestion?msg=${encodeURIComponent(formattedMsg)}`, {
+                method: "POST", // Use POST method to match the backend
                 headers: {
                     "Content-Type": "application/json",
-                    "accept": "application/json", // Matches the backend expectation
                 },
-                body: JSON.stringify(suggestionData), // Convert object to JSON
             });
 
             if (!response.ok) {
                 const errorData = await response.json();
                 console.error("Backend validation error:", errorData);
-                alert(`Error: ${errorData.detail[0]?.msg || "Unknown error occurred"}`);
+                alert(`Error: ${errorData.detail || "Unknown error occurred"}`);
                 return;
             }
 
             const data = await response.json();
             alert(`تم إرسال الاقتراح بنجاح: ${data.message}`);
-            navigate("/homepage");
-            setSuggestion("");
+            setSuggestion(""); // Clear the textarea after successful submission
         } catch (error) {
             console.error("Error submitting suggestion:", error.message);
             alert("حدث خطأ أثناء إرسال الاقتراح. حاول مرة أخرى لاحقًا.");

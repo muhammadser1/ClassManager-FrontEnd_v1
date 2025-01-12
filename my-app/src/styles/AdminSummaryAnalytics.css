@@ -1,0 +1,116 @@
+/* General Body Styling */
+body.admin-summary-analytics-body {
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafc;
+    /* Light gray background */
+    font-family: "Arial", sans-serif;
+    color: #333;
+    direction: rtl;
+    /* Right-to-left alignment */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Container */
+.admin-summary-analytics-container {
+    padding: 2rem;
+    background-color: #ffffff;
+    max-width: 1100px;
+    margin: 3rem auto;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.admin-summary-analytics-header {
+    text-align: center;
+    color: #2e7d32;
+    /* Dark green for the header */
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+/* Table Styling */
+.admin-summary-analytics-table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-summary-analytics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.admin-summary-analytics-table th,
+.admin-summary-analytics-table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.admin-summary-analytics-table th {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+}
+
+.admin-summary-analytics-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-summary-analytics-table tr:hover {
+    background-color: #e8f5e9;
+}
+
+/* Pagination */
+.admin-summary-analytics-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.admin-summary-analytics-page-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-summary-analytics-page-button.active {
+    background-color: #2e7d32;
+    font-weight: bold;
+}
+
+.admin-summary-analytics-page-button:hover {
+    background-color: #388e3c;
+}
+
+/* Back Button */
+.admin-summary-analytics-back-button {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.admin-summary-analytics-back-button:hover {
+    background-color: #388e3c;
+}
