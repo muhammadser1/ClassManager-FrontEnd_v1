@@ -54,7 +54,7 @@ function TechnicalProblem() {
         const formattedMsg = `${username}:{${description}}`;
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/teacher/submit-suggestion?msg=${encodeURIComponent(formattedMsg)}`, {
+            const response = await fetch(`https://classmanager-api.onrender.com/teacher/submit-suggestion?msg=${encodeURIComponent(formattedMsg)}`, {
                 method: "POST", // Ensure this matches your backend's expected method
                 headers: {
                     "Content-Type": "application/json",

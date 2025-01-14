@@ -29,7 +29,7 @@ const AdminSummaryAnalytics = () => {
                     console.log("Decoded Token:", decodedToken); // Log token details
                 }
 
-                const response = await axios.get("http://127.0.0.1:8000/teacher/approved-lessons", {
+                const response = await axios.get("https://classmanager-api.onrender.com/teacher/approved-lessons", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

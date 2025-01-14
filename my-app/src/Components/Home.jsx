@@ -20,7 +20,7 @@ const Home = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await fetch("http://localhost:8000/event/events");
+                const response = await fetch("https://classmanager-api.onrender.com/event/events");
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -33,7 +33,7 @@ const Home = () => {
         };
         const fetchBirthdays = async () => {
             try {
-                const response = await fetch("http://localhost:8000/teacher/teachers-birthdays");
+                const response = await fetch("https://classmanager-api.onrender.com/teacher/teachers-birthdays");
                 const data = await response.json();
                 console.log("Fetched data:", data);
 

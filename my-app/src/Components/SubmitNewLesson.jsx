@@ -94,7 +94,7 @@ function SubmitLesson() {
         console.log("Submitting payload:", lessonData); // Debug: Log the payload
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/teacher/submit-lesson", {
+            const response = await fetch("https://classmanager-api.onrender.com/teacher/submit-lesson", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

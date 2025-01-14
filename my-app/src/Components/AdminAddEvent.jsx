@@ -41,7 +41,7 @@ const AdminAddEvent = () => {
                 return;
             }
 
-            const response = await fetch("http://127.0.0.1:8000/admin/add-event", {
+            const response = await fetch("https://classmanager-api.onrender.com/admin/add-event", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

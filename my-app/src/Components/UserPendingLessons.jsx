@@ -35,7 +35,7 @@ const UserPendingLessons = () => {
     useEffect(() => {
         const fetchPendingLessons = async () => {
             try {
-                const response = await axios.get("http://127.0.0.1:8000/teacher/pending-lessons", {
+                const response = await axios.get("https://classmanager-api.onrender.com/teacher/pending-lessons", {
                     params: { teacher_name: teacherName },
                 });
                 const lessons = response.data.pending_lessons.map((lesson) => ({

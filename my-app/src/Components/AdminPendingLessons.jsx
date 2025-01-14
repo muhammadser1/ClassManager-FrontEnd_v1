@@ -23,7 +23,7 @@ const AdminPendingLessons = () => {
     useEffect(() => {
         const fetchPendingLessons = async () => {
             try {
-                const response = await axios.get("http://127.0.0.1:8000/teacher/pending-lessons");
+                const response = await axios.get("https://classmanager-api.onrender.com/teacher/pending-lessons");
                 setPendingLessons(response.data.pending_lessons);
             } catch (error) {
                 console.error("Error fetching lessons:", error);
@@ -52,7 +52,7 @@ const AdminPendingLessons = () => {
 
         try {
             const response = await axios.put(
-                `http://127.0.0.1:8000/admin/update-lesson-status/${lessonId}`,
+                `https://classmanager-api.onrender.com/admin/update-lesson-status/${lessonId}`,
                 null,
                 { params: { status } }
             );

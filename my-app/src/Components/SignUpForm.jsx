@@ -28,7 +28,7 @@ function SignupForm() {
         setSuccess("");
 
         try {
-            const response = await fetch("http://localhost:8000/auth/signup-teacher", {
+            const response = await fetch("https://classmanager-api.onrender.com/auth/signup-teacher", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

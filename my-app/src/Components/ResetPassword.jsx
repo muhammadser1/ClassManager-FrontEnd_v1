@@ -48,7 +48,7 @@ function ResetPassword() {
         }
 
         try {
-            const response = await fetch("http://localhost:8000/auth/reset-password", {
+            const response = await fetch("https://classmanager-api.onrender.com/auth/reset-password", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

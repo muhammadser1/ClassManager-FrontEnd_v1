@@ -55,7 +55,7 @@ const UserLessons = () => {
 
     const fetchApprovedLessons = async (teacherName) => {
         try {
-            const response = await axios.get("http://127.0.0.1:8000/teacher/approved-lessons", {
+            const response = await axios.get("https://classmanager-api.onrender.com/teacher/approved-lessons", {
                 params: { teacher_name: teacherName },
             });
             setApprovedLessons(response.data.approved_lessons || []);
