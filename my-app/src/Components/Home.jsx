@@ -53,7 +53,7 @@ const Home = () => {
             {/* Header */}
             <header className="navbar">
                 <div className="nav-left">
-                    <img src="src/images/maram.png" alt="Logo" className="logo" />
+                    <img src="../images/maram.png" alt="Logo" className="logo" />
                     <span className="institute-name">Al Maram</span>
                 </div>
                 <div className="nav-right">
@@ -82,7 +82,7 @@ const Home = () => {
                     <a href="#reminders">
                         <div className="grid-item color-1">
                             <div className="icon">
-                                <img src="src/images/reminders.png" alt="Reminders Icon" className="icon-img" />
+                                <img src="../images/reminders.png" alt="Reminders Icon" className="icon-img" />
                             </div>
                             <span>Reminders</span>
                         </div>
@@ -106,7 +106,7 @@ const Home = () => {
                     <a href="#resources">
                         <div className="grid-item color-4">
                             <div className="icon">
-                                <img src="src/images/class-resources-icon.png" alt="Class Resources Icon" />
+                                <img src="../images/class-resources-icon.png" alt="Class Resources Icon" />
                             </div>
                             <span>Class Resources</span>
                         </div>
@@ -114,7 +114,7 @@ const Home = () => {
                     <a href="#schedule">
                         <div className="grid-item color-1">
                             <div className="icon">
-                                <img src="src/images/support-icon.png" alt="Support Icon" />
+                                <img src="../images/support-icon.png" alt="Support Icon" />
                             </div>
                             <span>Class Schedule</span>
                         </div>
@@ -122,7 +122,7 @@ const Home = () => {
                     <a href="#events">
                         <div className="grid-item color-2">
                             <div className="icon">
-                                <img src="src/images/events-icon.png" alt="Events Icon" />
+                                <img src="../images/events-icon.png" alt="Events Icon" />
                             </div>
                             <span>Events</span>
                         </div>
