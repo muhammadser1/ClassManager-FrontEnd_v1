@@ -187,7 +187,7 @@ const Home = () => {
                 )}
                 <div className="event-image">
                     <img
-                        src="src/images/events-icon.png"
+                        src="../images/events-icon.png"
                         alt="Happy Birthday Balloons"
                         className="balloons-img"
                     />
