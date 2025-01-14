@@ -16,7 +16,7 @@ import AdminSummaryAnalytics from "./Components/AdminSummaryAnalytics"; // Sugge
 import AdminStudentSummary from "./Components/AdminStudentSummary"; // Suggestion component
 import ForgotPassword from "./Components/ForgotPassword"; // Suggestion component
 import ResetPassword from "./Components/ResetPassword";
-import AdminAddEvent from "./components/AdminAddEvent";
+import AdminAddEvent from "./Components/AdminAddEvent";
 
 
 function App() {
