@@ -90,7 +90,7 @@ const Home = () => {
                     <a href="#policies">
                         <div className="grid-item color-2">
                             <div className="icon">
-                                <img src="src/images/policies.png" alt="Classroom Policies Icon" />
+                                <img src="../images/policies.png" alt="Classroom Policies Icon" />
                             </div>
                             <span>Classroom Policies</span>
                         </div>
@@ -98,7 +98,7 @@ const Home = () => {
                     <a href="#suggestions">
                         <div className="grid-item color-4">
                             <div className="icon">
-                                <img src="src/images/idea.png" alt="Suggestions Icon" />
+                                <img src="../images/idea.png" alt="Suggestions Icon" />
                             </div>
                             <span>Suggestions</span>
                         </div>
