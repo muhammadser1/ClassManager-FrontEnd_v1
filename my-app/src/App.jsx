@@ -15,7 +15,7 @@ import AdminApprovedLessons from "./Components/AdminApprovedLessons"; // Suggest
 import AdminSummaryAnalytics from "./Components/AdminSummaryAnalytics"; // Suggestion component
 import AdminStudentSummary from "./Components/AdminStudentSummary"; // Suggestion component
 import ForgotPassword from "./Components/ForgotPassword"; // Suggestion component
-import ResetPassword from "./components/ResetPassword";
+import ResetPassword from "./Components/ResetPassword";
 import AdminAddEvent from "./components/AdminAddEvent";
 
 
